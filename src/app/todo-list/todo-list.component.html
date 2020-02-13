@@ -1,0 +1,11 @@
+<h1>Ma todolist</h1>
+
+<ul *ngFor="let task of todolist">
+    <li><i class="material-icons" (click)="deleteTask(task)">clear</i>{{task}}</li>
+</ul>
+
+<p>Que dois-je faire ?</p>
+<form [formGroup]="todoListForm" (ngSubmit)="addTask(todoListForm.value.newTask)">
+    <input class="newTask" type="text" formControlName="newTask">
+    <button type="submit">Créer</button>
+</form>
